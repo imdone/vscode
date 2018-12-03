@@ -74,7 +74,7 @@ class Main {
 	) { }
 
 	run(argv: ParsedArgs): TPromise<any> {
-		// TODO@joao - make this contributable
+		// TODO - make this contributable id:21 @joao
 
 		let returnPromise: TPromise<any>;
 		if (argv['install-source']) {

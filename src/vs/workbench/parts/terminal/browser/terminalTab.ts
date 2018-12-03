@@ -46,7 +46,7 @@ class SplitPaneContainer {
 	}
 
 	public resizePane(index: number, direction: Direction, amount: number): void {
-		// TODO: Should resize pane up/down resize the panel?
+		// TODO: Should resize pane up/down resize the panel? id:162
 
 		// Only resize the correct dimension
 		const isHorizontal = direction === Direction.Left || direction === Direction.Right;
@@ -285,7 +285,7 @@ export class TerminalTab extends Disposable implements ITerminalTab {
 		if (wasActiveInstance && this._terminalInstances.length > 0) {
 			const newIndex = index < this._terminalInstances.length ? index : this._terminalInstances.length - 1;
 			this.setActiveInstanceByIndex(newIndex);
-			// TODO: Only focus the new instance if the tab had focus?
+			// TODO: Only focus the new instance if the tab had focus? id:186
 			if (this.activeInstance) {
 				this.activeInstance.focus(true);
 			}
@@ -426,7 +426,7 @@ export class TerminalTab extends Disposable implements ITerminalTab {
 
 		const isHorizontal = (direction === Direction.Left || direction === Direction.Right);
 		const font = this._terminalService.configHelper.getFont();
-		// TODO: Support letter spacing and line height
+		// TODO: Support letter spacing and line height id:226
 		const amount = isHorizontal ? font.charWidth : font.charHeight;
 		if (amount) {
 			this._splitPaneContainer.resizePane(this._activeInstanceIndex, direction, amount);

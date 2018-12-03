@@ -49,7 +49,7 @@ export class ReplModel {
 			}
 			this.addReplElements(toAdd);
 		} else {
-			// TODO@Isidor hack, we should introduce a new type which is an output that can fetch children like an expression
+			// TODO hack, we should introduce a new type which is an output that can fetch children like an expression id:178 @Isidor
 			(<any>data).severity = sev;
 			(<any>data).sourceData = source;
 			this.addReplElements([data]);

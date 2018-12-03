@@ -249,7 +249,7 @@ export class ViewZones extends ViewPart {
 			let props = this._computeWhitespaceProps(zone.delegate);
 			// let newOrdinal = this._getZoneOrdinal(zone.delegate);
 			changed = this._context.viewLayout.changeWhitespace(zone.whitespaceId, props.afterViewLineNumber, props.heightInPx) || changed;
-			// TODO@Alex: change `newOrdinal` too
+			// TODO change `newOrdinal` too id:108 @Alex:
 
 			if (changed) {
 				this._safeCallOnComputedHeight(zone.delegate, props.heightInPx);

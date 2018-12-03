@@ -625,7 +625,7 @@ export class WorkspaceStats implements IWorkbenchContribution {
 		}
 	*/
 	private reportAzureNode(workspaceUris: URI[], tags: Tags): Thenable<Tags> {
-		// TODO: should also work for `node_modules` folders several levels down
+		// TODO: should also work for `node_modules` folders several levels down id:206
 		const uris = workspaceUris.map(workspaceUri => {
 			const path = workspaceUri.path;
 			return workspaceUri.with({ path: `${path !== '/' ? path : ''}/node_modules` });

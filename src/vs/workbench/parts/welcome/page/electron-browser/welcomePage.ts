@@ -466,7 +466,7 @@ class WelcomePage {
 						.then(() => this.extensionManagementService.getInstalled(LocalExtensionType.User))
 						.then(installed => {
 							const local = installed.filter(i => areSameExtensions(extension.identifier, i.galleryIdentifier))[0];
-							// TODO: Do this as part of the install to avoid multiple events.
+							// TODO: Do this as part of the install to avoid multiple events. id:191
 							return this.extensionEnablementService.setEnablement(local, EnablementState.Disabled).then(() => local);
 						});
 				});

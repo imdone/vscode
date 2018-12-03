@@ -94,7 +94,7 @@ function getMacMachineId(): Promise<string> {
 				});
 
 				// Timeout due to hang with reduced privileges #58392
-				// TODO@sbatten: Remove this when getmac is patched
+				// TODO Remove this when getmac is patched id:101 @sbatten:
 				setTimeout(() => {
 					resolve(undefined);
 				}, 1000);

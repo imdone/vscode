@@ -60,7 +60,7 @@ export class Debugger implements IDebugger {
 					case 'server':
 						return new SocketDebugAdapter(adapterDescriptor);
 					case 'implementation':
-						// TODO@AW: this.inExtHost() should now return true
+						// TODO this.inExtHost() should now return true id:180 @AW:
 						return Promise.resolve(this.configurationManager.createDebugAdapter(session));
 					default:
 						throw new Error('unknown type');

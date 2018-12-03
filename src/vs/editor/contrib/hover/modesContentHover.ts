@@ -230,7 +230,7 @@ export class ModesContentHoverWidget extends ContentHoverWidget {
 			this._hoverOperation.cancel();
 			this._computer.clearResult();
 
-			if (!this._colorPicker) { // TODO@Michel ensure that displayed text for other decorations is computed even if color picker is in place
+			if (!this._colorPicker) { // TODO ensure that displayed text for other decorations is computed even if color picker is in place id:86 @Michel
 				this._hoverOperation.start(HoverStartMode.Delayed);
 			}
 		}

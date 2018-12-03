@@ -157,7 +157,7 @@ export interface ISettingsEditorOptions extends IEditorOptions {
 }
 
 /**
- * TODO Why do we need this class?
+ * TODO Why do we need this class? id:214
  */
 export class SettingsEditorOptions extends EditorOptions implements ISettingsEditorOptions {
 
@@ -203,7 +203,7 @@ export interface IPreferencesService {
 
 	resolveModel(uri: URI): Thenable<ITextModel>;
 	createPreferencesEditorModel<T>(uri: URI): Thenable<IPreferencesEditorModel<T>>;
-	createSettings2EditorModel(): Settings2EditorModel; // TODO
+	createSettings2EditorModel(): Settings2EditorModel; // TODO  id:238
 
 	openRawDefaultSettings(): Thenable<IEditor>;
 	openSettings(jsonEditor?: boolean): Thenable<IEditor>;

@@ -78,7 +78,7 @@ export class TerminalProcess implements ITerminalChildProcess, IDisposable {
 			this._queueProcessExit();
 		});
 
-		// TODO: We should no longer need to delay this since pty.spawn is sync
+		// TODO: We should no longer need to delay this since pty.spawn is sync id:166
 		setTimeout(() => {
 			this._sendProcessId();
 		}, 500);

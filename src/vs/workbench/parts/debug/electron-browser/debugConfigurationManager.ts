@@ -148,7 +148,7 @@ export class ConfigurationManager implements IConfigurationManager {
 		if (providers0.length === 1) {
 			return providers0[0].debugAdapterExecutable(session.root ? session.root.uri : undefined);
 		} else {
-			// TODO@AW handle n > 1 case
+			// TODO handle n > 1 case id:218 @AW
 		}
 
 		// try new proposed API
@@ -156,7 +156,7 @@ export class ConfigurationManager implements IConfigurationManager {
 		if (providers.length === 1) {
 			return providers[0].createDebugAdapterDescriptor(session);
 		} else {
-			// TODO@AW handle n > 1 case
+			// TODO handle n > 1 case id:200 @AW
 		}
 		return Promise.resolve(undefined);
 	}
@@ -211,8 +211,8 @@ export class ConfigurationManager implements IConfigurationManager {
 			return true;
 		}
 
-		// TODO@AW deprecated
-		// if the given debugType matches any registered provider that has a provideTracker method, we need to run the DA in the EH
+		// TODO deprecated id:126 @AW
+  // if the given debugType matches any registered provider that has a provideTracker method, we need to run the DA in the EH
 		const providers2 = this.configProviders.filter(p => p.hasTracker && (p.type === debugType || p.type === '*'));
 		return providers2.length > 0;
 	}

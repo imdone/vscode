@@ -175,9 +175,9 @@ export abstract class Panel implements IView {
 		domEvent(this.header, 'click')
 			(() => this.setExpanded(!this.isExpanded()), null, this.disposables);
 
-		// TODO@Joao move this down to panelview
-		// onHeaderKeyDown.filter(e => e.keyCode === KeyCode.UpArrow)
-		// 	.event(focusPrevious, this, this.disposables);
+		// TODO move this down to panelview id:28 @Joao
+  // onHeaderKeyDown.filter(e => e.keyCode === KeyCode.UpArrow)
+  // 	.event(focusPrevious, this, this.disposables);
 
 		// onHeaderKeyDown.filter(e => e.keyCode === KeyCode.DownArrow)
 		// 	.event(focusNext, this, this.disposables);

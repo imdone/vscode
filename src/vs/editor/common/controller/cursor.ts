@@ -475,8 +475,8 @@ export class Cursor extends viewEvents.ViewEventEmitter implements ICursors {
 		let cursorChangeReason = CursorChangeReason.NotSet;
 
 		if (handlerId !== H.Undo && handlerId !== H.Redo) {
-			// TODO@Alex: if the undo/redo stack contains non-null selections
-			// it would also be OK to stop tracking selections here
+			// TODO if the undo/redo stack contains non-null selections id:84 @Alex:
+   // it would also be OK to stop tracking selections here
 			this._cursors.stopTrackingSelections();
 		}
 
@@ -665,8 +665,8 @@ class CommandExecutor {
 			}
 		}
 
-		// TODO@Alex: find a better way to do this.
-		// give the hint that edit operations are tracked to the model
+		// TODO find a better way to do this. id:60 @Alex:
+  // give the hint that edit operations are tracked to the model
 		if (commandsData.hadTrackedEditOperation && filteredOperations.length > 0) {
 			filteredOperations[0]._isTracked = true;
 		}

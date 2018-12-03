@@ -276,7 +276,7 @@ export class WebviewElement extends Disposable {
 	}
 
 	private style(theme: ITheme): void {
-		const { fontFamily, fontWeight, fontSize } = window.getComputedStyle(this._styleElement); // TODO@theme avoid styleElement
+		const { fontFamily, fontWeight, fontSize } = window.getComputedStyle(this._styleElement); // TODO avoid styleElement id:167 @theme
 
 		const exportedColors = colorRegistry.getColorRegistry().getColors().reduce((colors, entry) => {
 			const color = theme.getColor(entry.id);

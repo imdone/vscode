@@ -111,7 +111,7 @@ export class ExtHostSearch implements ExtHostSearchShape {
 		return toDisposable(() => {
 			this._fileIndexUsedSchemes.delete(scheme);
 			this._fileSearchProvider.delete(handle);
-			this._proxy.$unregisterProvider(handle); // TODO@roblou - unregisterFileIndexProvider
+			this._proxy.$unregisterProvider(handle); // TODO - unregisterFileIndexProvider id:120 @roblou
 		});
 	}
 
@@ -186,7 +186,7 @@ function registerEHProviders(extHostSearch: ExtHostSearch, logService: ILogServi
 
 function reviveQuery<U extends IRawQuery>(rawQuery: U): U extends IRawTextQuery ? ITextQuery : IFileQuery {
 	return {
-		...<any>rawQuery, // TODO
+		...<any>rawQuery, // TODO  id:149
 		...{
 			folderQueries: rawQuery.folderQueries && rawQuery.folderQueries.map(reviveFolderQuery),
 			extraFileResources: rawQuery.extraFileResources && rawQuery.extraFileResources.map(components => URI.revive(components))

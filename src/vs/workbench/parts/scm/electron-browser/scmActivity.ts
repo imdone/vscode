@@ -62,7 +62,7 @@ export class StatusUpdater implements IWorkbenchContribution {
 			}
 		}, 0);
 
-		// TODO@joao: remove
+		// TODO remove id:160 @joao:
 		this.logService.trace('SCM#StatusUpdater.render', count);
 
 		if (count > 0) {

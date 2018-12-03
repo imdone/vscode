@@ -141,7 +141,7 @@ export class MainThreadWorkspace implements MainThreadWorkspaceShape {
 			return !folderConfig.search.followSymlinks;
 		});
 
-		// TODO replace wth QueryBuilder
+		// TODO replace wth QueryBuilder id:44
 		folderQueries.forEach(fq => {
 			fq.ignoreSymlinks = ignoreSymlinks;
 		});

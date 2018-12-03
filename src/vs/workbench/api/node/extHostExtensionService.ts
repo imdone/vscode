@@ -241,7 +241,7 @@ export class ExtHostExtensionService implements ExtHostExtensionServiceShape {
 				return this._deactivate(extensionId);
 			});
 		} catch (err) {
-			// TODO: write to log once we have one
+			// TODO: write to log once we have one id:46
 		}
 		await allPromises;
 	}
@@ -320,19 +320,19 @@ export class ExtHostExtensionService implements ExtHostExtensionServiceShape {
 		try {
 			if (typeof extension.module.deactivate === 'function') {
 				result = Promise.resolve(extension.module.deactivate()).then(null, (err) => {
-					// TODO: Do something with err if this is not the shutdown case
+					// TODO: Do something with err if this is not the shutdown case id:119
 					return Promise.resolve(void 0);
 				});
 			}
 		} catch (err) {
-			// TODO: Do something with err if this is not the shutdown case
+			// TODO: Do something with err if this is not the shutdown case id:148
 		}
 
 		// clean up subscriptions
 		try {
 			dispose(extension.subscriptions);
 		} catch (err) {
-			// TODO: Do something with err if this is not the shutdown case
+			// TODO: Do something with err if this is not the shutdown case id:172
 		}
 
 		return result;

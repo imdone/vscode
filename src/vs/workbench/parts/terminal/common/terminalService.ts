@@ -136,8 +136,8 @@ export abstract class TerminalService implements ITerminalService {
 
 		// Adjust focus if the tab was active
 		if (wasActiveTab && this._terminalTabs.length > 0) {
-			// TODO: Only focus the new tab if the removed tab had focus?
-			// const hasFocusOnExit = tab.activeInstance.hadFocusOnExit;
+			// TODO: Only focus the new tab if the removed tab had focus? id:208
+   // const hasFocusOnExit = tab.activeInstance.hadFocusOnExit;
 			const newIndex = index < this._terminalTabs.length ? index : this._terminalTabs.length - 1;
 			this.setActiveTabByIndex(newIndex);
 			const activeInstance = this.getActiveInstance();

@@ -243,7 +243,7 @@ export class SettingsTreeModel {
 
 		const newRoot = this.createSettingsTreeGroupElement(newTocRoot);
 		if (newRoot.children[0] instanceof SettingsTreeGroupElement) {
-			(<SettingsTreeGroupElement>newRoot.children[0]).isFirstGroup = true; // TODO
+			(<SettingsTreeGroupElement>newRoot.children[0]).isFirstGroup = true; // TODO  id:158
 		}
 
 		if (this._root) {

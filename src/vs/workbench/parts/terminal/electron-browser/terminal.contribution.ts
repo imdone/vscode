@@ -149,12 +149,12 @@ configurationRegistry.registerConfiguration({
 			markdownDescription: nls.localize('terminal.integrated.fontFamily', "Controls the font family of the terminal, this defaults to `#editor.fontFamily#`'s value."),
 			type: 'string'
 		},
-		// TODO: Support font ligatures
-		// 'terminal.integrated.fontLigatures': {
-		// 	'description': nls.localize('terminal.integrated.fontLigatures', "Controls whether font ligatures are enabled in the terminal."),
-		// 	'type': 'boolean',
-		// 	'default': false
-		// },
+		// TODO: Support font ligatures id:187
+  // 'terminal.integrated.fontLigatures': {
+  // 	'description': nls.localize('terminal.integrated.fontLigatures', "Controls whether font ligatures are enabled in the terminal."),
+  // 	'type': 'boolean',
+  // 	'default': false
+  // },
 		'terminal.integrated.fontSize': {
 			description: nls.localize('terminal.integrated.fontSize', "Controls the font size in pixels of the terminal."),
 			type: 'number',

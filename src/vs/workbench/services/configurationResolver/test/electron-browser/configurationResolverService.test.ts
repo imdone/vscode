@@ -55,10 +55,10 @@ suite('Configuration Resolver Service', () => {
 		assert.strictEqual(configurationResolverService.resolve(workspace, 'abc ${workspaceRootFolderName} xyz'), 'abc workspaceLocation xyz');
 	});
 
-	// TODO@isidor mock the editor service properly
-	// test('current selected line number', () => {
-	// 	assert.strictEqual(configurationResolverService.resolve(workspace, 'abc ${lineNumber} xyz'), `abc ${editorService.mockLineNumber} xyz`);
-	// });
+	// TODO mock the editor service properly id:213 @isidor
+ // test('current selected line number', () => {
+ // 	assert.strictEqual(configurationResolverService.resolve(workspace, 'abc ${lineNumber} xyz'), `abc ${editorService.mockLineNumber} xyz`);
+ // });
 
 	// test('current selected text', () => {
 	// 	assert.strictEqual(configurationResolverService.resolve(workspace, 'abc ${selectedText} xyz'), `abc ${editorService.mockSelectedText} xyz`);

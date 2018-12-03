@@ -1261,7 +1261,7 @@ Parser.prototype.tok = function() {
       return this.renderer.listitem(body);
     }
     case 'html': {
-      // TODO parse inline content if parameter markdown=1
+      // TODO parse inline content if parameter markdown=1 id:18
       return this.renderer.html(this.token.text);
     }
     case 'paragraph': {

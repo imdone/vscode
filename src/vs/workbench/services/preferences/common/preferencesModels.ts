@@ -236,7 +236,7 @@ export class Settings2EditorModel extends AbstractSettingsModel implements ISett
 	}
 
 	public findValueMatches(filter: string, setting: ISetting): IRange[] {
-		// TODO @roblou
+		// TODO  id:169 @roblou
 		return [];
 	}
 

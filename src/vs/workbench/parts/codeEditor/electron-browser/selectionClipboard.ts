@@ -52,7 +52,7 @@ export class SelectionClipboard extends Disposable implements IEditorContributio
 					}
 
 					process.nextTick(() => {
-						// TODO@Alex: electron weirdness: calling clipboard.readText('selection') generates a paste event, so no need to execute paste ourselves
+						// TODO electron weirdness: calling clipboard.readText('selection') generates a paste event, so no need to execute paste ourselves id:199 @Alex:
 						clipboard.readText('selection');
 						// keybindingService.executeCommand(Handler.Paste, {
 						// 	text: clipboard.readText('selection'),

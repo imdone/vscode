@@ -959,7 +959,7 @@ export class ExtensionsWorkbenchService implements IExtensionsWorkbenchService, 
 		this.logService.info(`Uninstalling the extension ${id} from window ${this.windowService.getCurrentWindowId()}`);
 		const extension = this.installed.filter(e => e.local.identifier.id === id)[0];
 		const newLength = this.installed.filter(e => e.local.identifier.id !== id).length;
-		// TODO: Ask @Joao why is this?
+		// TODO: Ask why is this? id:128 @Joao
 		if (newLength === this.installed.length) {
 			return;
 		}

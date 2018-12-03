@@ -223,7 +223,7 @@ export function isValidExtensionVersion(version: string, extensionDesc: IReduced
 }
 
 export function isEngineValid(engine: string): boolean {
-	// TODO@joao: discuss with alex '*' doesn't seem to be a valid engine version
+	// TODO discuss with alex '*' doesn't seem to be a valid engine version id:141 @joao:
 	return engine === '*' || isVersionValid(pkg.version, engine);
 }
 

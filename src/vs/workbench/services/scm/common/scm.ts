@@ -52,7 +52,7 @@ export interface ISCMProvider extends IDisposable {
 
 	readonly groups: ISequence<ISCMResourceGroup>;
 
-	// TODO@Joao: remove
+	// TODO remove id:193 @Joao:
 	readonly onDidChangeResources: Event<void>;
 
 	readonly rootUri?: URI;

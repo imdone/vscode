@@ -999,7 +999,7 @@ export interface ExtHostDebugServiceShape {
 	$sendDAMessage(handle: number, message: DebugProtocol.ProtocolMessage): void;
 	$resolveDebugConfiguration(handle: number, folder: UriComponents | undefined, debugConfiguration: IConfig): Thenable<IConfig>;
 	$provideDebugConfigurations(handle: number, folder: UriComponents | undefined): Thenable<IConfig[]>;
-	$legacyDebugAdapterExecutable(handle: number, folderUri: UriComponents | undefined): Thenable<IAdapterDescriptor>; // TODO@AW legacy
+	$legacyDebugAdapterExecutable(handle: number, folderUri: UriComponents | undefined): Thenable<IAdapterDescriptor>; // TODO legacy id:117 @AW
 	$provideDebugAdapter(handle: number, session: IDebugSessionDto): Thenable<IAdapterDescriptor>;
 	$acceptDebugSessionStarted(session: IDebugSessionDto): void;
 	$acceptDebugSessionTerminated(session: IDebugSessionDto): void;

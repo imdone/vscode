@@ -644,7 +644,7 @@ export class TreeView extends HeightMap {
 	private setupMSGesture(): void {
 		if ((<any>window).MSGesture) {
 			this.msGesture = new MSGesture();
-			setTimeout(() => this.msGesture.target = this.wrapper, 100); // TODO@joh, TODO@IETeam
+			setTimeout(() => this.msGesture.target = this.wrapper, 100); // TODO TODO@IETeam id:80 @joh,
 		}
 	}
 
@@ -1707,7 +1707,7 @@ export class TreeView extends HeightMap {
 	}
 
 	public dispose(): void {
-		// TODO@joao: improve
+		// TODO improve id:56 @joao:
 		this.scrollableElement.dispose();
 
 		this.releaseModel();

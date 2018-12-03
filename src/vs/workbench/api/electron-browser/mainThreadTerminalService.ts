@@ -51,8 +51,8 @@ export class MainThreadTerminalService implements MainThreadTerminalServiceShape
 	public dispose(): void {
 		this._toDispose = dispose(this._toDispose);
 
-		// TODO@Daniel: Should all the previously created terminals be disposed
-		// when the extension host process goes down ?
+		// TODO Should all the previously created terminals be disposed id:68 @Daniel:
+  // when the extension host process goes down ?
 	}
 
 	public $createTerminal(name?: string, shellPath?: string, shellArgs?: string[], cwd?: string, env?: { [key: string]: string }, waitOnExit?: boolean): Thenable<number> {

@@ -238,7 +238,7 @@ export class CodeApplication extends Disposable {
 				if (connectionPool.has(uri.authority)) { // not disposed in the meantime
 					const channel = rawClient.getChannel(REMOTE_FILE_SYSTEM_CHANNEL_NAME);
 
-					// TODO@alex don't use call directly, wrap it around a `RemoteExtensionsFileSystemProvider`
+					// TODO don't use call directly, wrap it around a `RemoteExtensionsFileSystemProvider` id:103 @alex
 					const fileContents = await channel.call<Uint8Array>('readFile', [uri]);
 					callback(Buffer.from(fileContents));
 				} else {
@@ -630,7 +630,7 @@ export class CodeApplication extends Disposable {
 		(this.lifecycleService as LifecycleService).ready();
 
 		// Propagate to clients
-		const windowsMainService = this.windowsMainService = accessor.get(IWindowsMainService); // TODO@Joao: unfold this
+		const windowsMainService = this.windowsMainService = accessor.get(IWindowsMainService); // TODO unfold this id:81 @Joao:
 
 		const args = this.environmentService.args;
 

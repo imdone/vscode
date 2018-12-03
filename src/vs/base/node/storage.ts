@@ -324,7 +324,7 @@ export class SQLiteStorageDatabase implements IStorageDatabase {
 
 	get onDidChangeItemsExternal(): Event<IStorageItemsChangeEvent> { return Event.None; } // since we are the only client, there can be no external changes
 
-	private static measuredRequireDuration: boolean; // TODO@Ben remove me after a while
+	private static measuredRequireDuration: boolean; // TODO remove me after a while id:79 @Ben
 
 	private static BUSY_OPEN_TIMEOUT = 2000; // timeout in ms to retry when opening DB fails with SQLITE_BUSY
 
@@ -462,11 +462,11 @@ export class SQLiteStorageDatabase implements IStorageDatabase {
 
 			this.doOpen(path).then(resolve, error => {
 
-				// TODO@Ben check if this is still happening. This error code should only arise if
-				// another process is locking the same DB we want to open at that time. This typically
-				// never happens because a DB connection is limited per window. However, in the event
-				// of a window reload, it may be possible that the previous connection was not properly
-				// closed while the new connection is already established.
+				// TODO check if this is still happening. This error code should only arise if id:55 @Ben
+    // another process is locking the same DB we want to open at that time. This typically
+    // never happens because a DB connection is limited per window. However, in the event
+    // of a window reload, it may be possible that the previous connection was not properly
+    // closed while the new connection is already established.
 				if (error.code === 'SQLITE_BUSY') {
 					return this.handleSQLiteBusy(path).then(resolve, fallbackToInMemoryDatabase);
 				}
@@ -507,7 +507,7 @@ export class SQLiteStorageDatabase implements IStorageDatabase {
 	}
 
 	private doOpen(path: string): Promise<IOpenDatabaseResult> {
-		// TODO@Ben clean up performance markers
+		// TODO clean up performance markers id:31 @Ben
 		return new Promise((resolve, reject) => {
 			let measureRequireDuration = false;
 			if (!SQLiteStorageDatabase.measuredRequireDuration) {

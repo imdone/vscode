@@ -410,10 +410,10 @@ export class CodeWindow extends Disposable implements ICodeWindow {
 		// Handle Workspace events
 		this._register(this.workspacesMainService.onUntitledWorkspaceDeleted(e => this.onUntitledWorkspaceDeleted(e)));
 
-		// TODO@Ben workaround for https://github.com/Microsoft/vscode/issues/13612
-		// It looks like smooth scrolling disappears as soon as the window is minimized
-		// and maximized again. Touching some window properties "fixes" it, like toggling
-		// the visibility of the menu.
+		// TODO workaround for https://github.com/Microsoft/vscode/issues/13612 id:57 @Ben
+  // It looks like smooth scrolling disappears as soon as the window is minimized
+  // and maximized again. Touching some window properties "fixes" it, like toggling
+  // the visibility of the menu.
 		if (isWindows) {
 			const windowConfig = this.configurationService.getValue<IWindowSettings>('window');
 			if (windowConfig && windowConfig.smoothScrollingWorkaround === true) {

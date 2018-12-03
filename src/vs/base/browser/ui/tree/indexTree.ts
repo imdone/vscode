@@ -22,7 +22,7 @@ export class IndexTree<T, TFilterData = void> extends AbstractTree<T, TFilterDat
 	constructor(
 		container: HTMLElement,
 		delegate: IListVirtualDelegate<T>,
-		renderers: ITreeRenderer<any /* TODO@joao */, TFilterData, any>[],
+		renderers: ITreeRenderer<any /* TODO  private rootElement: T, options: IIndexTreeOptions<T, TFilterData> = {} ) { super(container, delegate, renderers, options); } splice(location: number[], deleteCount: number, toInsert: ISequence<ITreeElement<T>> = Iterator.empty()): Iterator<ITreeElement<T>> { return this.model.splice(location, deleteCount, toInsert); } protected createModel(view: ISpliceable<ITreeNode<T, TFilterData>>, options: IIndexTreeOptions<T, TFilterData>): ITreeModel<T, TFilterData, number[]> { return new IndexTreeModel(view, this.rootElement, options); } } id:77 @joao 		private rootElement: T, 		options: IIndexTreeOptions<T, TFilterData> = {} 	) { 		super(container, delegate, renderers, options); 	} 	splice(location: number[], deleteCount: number, toInsert: ISequence<ITreeElement<T>> = Iterator.empty()): Iterator<ITreeElement<T>> { 		return this.model.splice(location, deleteCount, toInsert); 	} 	protected createModel(view: ISpliceable<ITreeNode<T, TFilterData>>, options: IIndexTreeOptions<T, TFilterData>): ITreeModel<T, TFilterData, number[]> { 		return new IndexTreeModel(view, this.rootElement, options); 	} } */, TFilterData, any>[],
 		private rootElement: T,
 		options: IIndexTreeOptions<T, TFilterData> = {}
 	) {

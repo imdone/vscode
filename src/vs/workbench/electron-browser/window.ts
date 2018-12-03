@@ -117,7 +117,7 @@ export class ElectronWindow extends Themable {
 					}
 				}
 			} else {
-				args.push({ from: request.from }); // TODO@telemetry this is a bit weird to send this to every action?
+				args.push({ from: request.from }); // TODO this is a bit weird to send this to every action? id:177 @telemetry
 			}
 
 			this.commandService.executeCommand(request.id, ...args).then(_ => {

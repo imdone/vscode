@@ -592,7 +592,7 @@ export class ReportPerformanceIssueUsingReporterAction extends Action {
 	}
 
 	run(): Thenable<boolean> {
-		// TODO: Reporter should send timings table as well
+		// TODO: Reporter should send timings table as well id:75
 		return this.issueService.openReporter({ issueType: IssueType.PerformanceIssue })
 			.then(() => true);
 	}

@@ -381,7 +381,7 @@ export class SearchService implements IRawSearchService {
 
 	/**
 	 * Return a CancelablePromise which is not actually cancelable
-	 * TODO@rob - Is this really needed?
+	 * TODO - Is this really needed? id:239 @rob
 	 */
 	private preventCancellation<C>(promise: CancelablePromise<C>): CancelablePromise<C> {
 		return new class implements CancelablePromise<C> {
@@ -399,7 +399,7 @@ export class SearchService implements IRawSearchService {
 }
 
 interface ICacheRow {
-	// TODO@roblou - never actually canceled
+	// TODO - never actually canceled id:242 @roblou
 	promise: CancelablePromise<[ISearchEngineSuccess, IRawFileMatch[]]>;
 	resolved: boolean;
 	event: Event<IFileSearchProgressItem>;
@@ -429,7 +429,7 @@ const FileMatchItemAccessor = new class implements IItemAccessor<IRawFileMatch> 
 
 function reviveQuery<U extends IRawQuery>(rawQuery: U): U extends IRawTextQuery ? ITextQuery : IFileQuery {
 	return {
-		...<any>rawQuery, // TODO
+		...<any>rawQuery, // TODO  id:194
 		...{
 			folderQueries: rawQuery.folderQueries && rawQuery.folderQueries.map(reviveFolderQuery),
 			extraFileResources: rawQuery.extraFileResources && rawQuery.extraFileResources.map(components => URI.revive(components))

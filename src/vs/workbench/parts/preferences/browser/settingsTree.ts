@@ -1543,7 +1543,7 @@ export class SettingsTree extends NonExpandableOrSelectableTree {
 		this.disposables.push(registerThemingParticipant((theme: ITheme, collector: ICssStyleCollector) => {
 			const activeBorderColor = theme.getColor(focusBorder);
 			if (activeBorderColor) {
-				// TODO@rob - why isn't this applied when added to the stylesheet from tocTree.ts? Seems like a chromium glitch.
+				// TODO - why isn't this applied when added to the stylesheet from tocTree.ts? Seems like a chromium glitch. id:129 @rob
 				collector.addRule(`.settings-editor > .settings-body > .settings-toc-container .monaco-tree:focus .monaco-tree-row.focused {outline: solid 1px ${activeBorderColor}; outline-offset: -1px;  }`);
 			}
 

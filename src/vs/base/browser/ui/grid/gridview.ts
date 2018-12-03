@@ -547,7 +547,7 @@ export class GridView implements IDisposable {
 		this._root = root;
 		this.element.appendChild(root.element);
 		this.onDidSashResetRelay.input = root.onDidSashReset;
-		this._onDidChange.input = mapEvent(root.onDidChange, () => undefined); // TODO
+		this._onDidChange.input = mapEvent(root.onDidChange, () => undefined); // TODO  id:26
 	}
 
 	get orientation(): Orientation {

@@ -124,7 +124,7 @@ export class ExtensionHostMain {
 		this.disposables = dispose(this.disposables);
 
 		errors.setUnexpectedErrorHandler((err) => {
-			// TODO: write to log once we have one
+			// TODO: write to log once we have one id:76
 		});
 
 		const extensionsDeactivated = this._extensionService.deactivateAll();
