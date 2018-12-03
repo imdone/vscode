@@ -39,7 +39,7 @@ export class ExtensionDescriptionRegistry {
 				for (let j = 0, lenJ = extensionDescription.activationEvents.length; j < lenJ; j++) {
 					let activationEvent = extensionDescription.activationEvents[j];
 
-					// TODO@joao: there's no easy way to contribute this
+					// TODO there's no easy way to contribute this id:168 @joao:
 					if (activationEvent === 'onUri') {
 						activationEvent = `onUri:${extensionDescription.id}`;
 					}

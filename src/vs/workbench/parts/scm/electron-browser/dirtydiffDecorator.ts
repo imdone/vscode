@@ -51,7 +51,7 @@ import { IContextMenuService } from 'vs/platform/contextview/browser/contextView
 import { INotificationService } from 'vs/platform/notification/common/notification';
 import { createStyleSheet } from 'vs/base/browser/dom';
 
-// TODO@Joao
+// TODO  id:183 @Joao
 // Need to subclass MenuItemActionItem in order to respect
 // the action context coming from any action bar, without breaking
 // existing users
@@ -227,8 +227,8 @@ class DirtyDiffWidget extends PeekViewWidget {
 
 		const onFirstDiffUpdate = once(this.diffEditor.onDidUpdateDiff);
 
-		// TODO@joao TODO@alex need this setTimeout probably because the
-		// non-side-by-side diff still hasn't created the view zones
+		// TODO TODO@alex need this setTimeout probably because the id:223 @joao
+  // non-side-by-side diff still hasn't created the view zones
 		onFirstDiffUpdate(() => setTimeout(() => this.revealChange(change), 0));
 
 		this.diffEditor.setModel(this.model);
@@ -719,7 +719,7 @@ export class DirtyDiffController implements IEditorContribution {
 		const offsetLeftInGutter = (e.target.element as HTMLElement).offsetLeft;
 		const gutterOffsetX = data.offsetX - offsetLeftInGutter;
 
-		// TODO@joao TODO@alex TODO@martin this is such that we don't collide with folding
+		// TODO TODO@alex TODO@martin this is such that we don't collide with folding id:205 @joao
 		if (gutterOffsetX < -3 || gutterOffsetX > 6) { // dirty diff decoration on hover is 9px wide
 			return;
 		}
@@ -1194,9 +1194,9 @@ export class DirtyDiffWorkbenchController implements ext.IWorkbenchContribution,
 		this.enabled = false;
 	}
 
-	// HACK: This is the best current way of figuring out whether to draw these decorations
-	// or not. Needs context from the editor, to know whether it is a diff editor, in place editor
-	// etc.
+	// HACK: This is the best current way of figuring out whether to draw these decorations id:131
+ // or not. Needs context from the editor, to know whether it is a diff editor, in place editor
+ // etc.
 	private onEditorsChanged(): void {
 		const models = this.editorService.visibleTextEditorWidgets
 

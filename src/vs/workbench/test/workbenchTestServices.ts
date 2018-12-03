@@ -1370,7 +1370,7 @@ export class TestWindowsService implements IWindowsService {
 		return TPromise.as(true);
 	}
 
-	// TODO: this is a bit backwards
+	// TODO: this is a bit backwards id:235
 	startCrashReporter(_config: Electron.CrashReporterStartOptions): TPromise<void> {
 		return TPromise.as(void 0);
 	}

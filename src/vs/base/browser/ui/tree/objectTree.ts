@@ -21,7 +21,7 @@ export class ObjectTree<T extends NonNullable<any>, TFilterData = void> extends 
 	constructor(
 		container: HTMLElement,
 		delegate: IListVirtualDelegate<T>,
-		renderers: ITreeRenderer<any /* TODO@joao */, TFilterData, any>[],
+		renderers: ITreeRenderer<any /* TODO  options: IObjectTreeOptions<T, TFilterData> = {} ) { super(container, delegate, renderers, options); } setChildren( element: T | null, children?: ISequence<ITreeElement<T>>, onDidCreateNode?: (node: ITreeNode<T, TFilterData>) => void, onDidDeleteNode?: (node: ITreeNode<T, TFilterData>) => void ): Iterator<ITreeElement<T | null>> { return this.model.setChildren(element, children, onDidCreateNode, onDidDeleteNode); } protected createModel(view: ISpliceable<ITreeNode<T, TFilterData>>, options: IObjectTreeOptions<T, TFilterData>): ITreeModel<T | null, TFilterData, T | null> { return new ObjectTreeModel(view, options); } } id:17 @joao 		options: IObjectTreeOptions<T, TFilterData> = {} 	) { 		super(container, delegate, renderers, options); 	} 	setChildren( 		element: T | null, 		children?: ISequence<ITreeElement<T>>, 		onDidCreateNode?: (node: ITreeNode<T, TFilterData>) => void, 		onDidDeleteNode?: (node: ITreeNode<T, TFilterData>) => void 	): Iterator<ITreeElement<T | null>> { 		return this.model.setChildren(element, children, onDidCreateNode, onDidDeleteNode); 	} 	protected createModel(view: ISpliceable<ITreeNode<T, TFilterData>>, options: IObjectTreeOptions<T, TFilterData>): ITreeModel<T | null, TFilterData, T | null> { 		return new ObjectTreeModel(view, options); 	} } */, TFilterData, any>[],
 		options: IObjectTreeOptions<T, TFilterData> = {}
 	) {
 		super(container, delegate, renderers, options);

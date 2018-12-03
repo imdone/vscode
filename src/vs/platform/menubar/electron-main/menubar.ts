@@ -44,7 +44,7 @@ export class Menubar {
 	private menuGC: RunOnceScheduler;
 
 	// Array to keep menus around so that GC doesn't cause crash as explained in #55347
-	// TODO@sbatten Remove this when fixed upstream by Electron
+	// TODO Remove this when fixed upstream by Electron id:41 @sbatten
 	private oldMenus: Menu[];
 
 	private menubarMenus: { [id: string]: IMenubarMenu };
@@ -88,7 +88,7 @@ export class Menubar {
 	}
 
 	private restoreCachedMenubarData() {
-		// TODO@sbatten remove this at some point down the road
+		// TODO remove this at some point down the road id:114 @sbatten
 		const outdatedKeys = ['lastKnownAdditionalKeybindings', 'lastKnownKeybindings', 'lastKnownMenubar'];
 		outdatedKeys.forEach(key => this.stateService.removeItem(key));
 
@@ -235,7 +235,7 @@ export class Menubar {
 
 	private install(): void {
 		// Store old menu in our array to avoid GC to collect the menu and crash. See #55347
-		// TODO@sbatten Remove this when fixed upstream by Electron
+		// TODO Remove this when fixed upstream by Electron id:143 @sbatten
 		const oldMenu = Menu.getApplicationMenu();
 		if (oldMenu) {
 			this.oldMenus.push(oldMenu);

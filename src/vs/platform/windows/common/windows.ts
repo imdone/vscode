@@ -165,7 +165,7 @@ export interface IWindowsService {
 	// foreground ordering issues on Windows
 	openExternal(url: string): TPromise<boolean>;
 
-	// TODO: this is a bit backwards
+	// TODO: this is a bit backwards id:145
 	startCrashReporter(config: CrashReporterStartOptions): TPromise<void>;
 
 	openAboutDialog(): TPromise<void>;

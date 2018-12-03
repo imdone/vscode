@@ -188,13 +188,13 @@ suite('Search-integration', function () {
 		return doSearchTest(config, 382);
 	});
 
-	// TODO
-	// test('Text: e (with absolute path excludes)', () => {
-	// 	const config: any = {
-	// 		folderQueries: ROOT_FOLDER_QUERY,
-	// 		contentPattern: { pattern: 'e' },
-	// 		excludePattern: makeExpression(path.join(TEST_FIXTURES, '**/examples'))
-	// 	};
+	// TODO  id:216
+ test('Text: e (with absolute path excludes)', () => {
+ 	const config: any = {
+ 		folderQueries: ROOT_FOLDER_QUERY,
+ 		contentPattern: { pattern: 'e' },
+ 		excludePattern: makeExpression(path.join(TEST_FIXTURES, '**/examples'))
+ 	};
 
 	// 	return doSearchTest(config, 394);
 	// });

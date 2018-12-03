@@ -366,14 +366,14 @@ export class ExtHostTerminalService implements ExtHostTerminalServiceShape {
 	}
 
 	public $createProcess(id: number, shellLaunchConfig: ShellLaunchConfigDto, activeWorkspaceRootUriComponents: UriComponents, cols: number, rows: number): void {
-		// TODO: This function duplicates a lot of TerminalProcessManager.createProcess, ideally
-		// they would be merged into a single implementation.
+		// TODO: This function duplicates a lot of TerminalProcessManager.createProcess, ideally id:173
+  // they would be merged into a single implementation.
 
 		const terminalConfig = this._extHostConfiguration.getConfiguration('terminal.integrated');
 
 		if (!shellLaunchConfig.executable) {
-			// TODO: This duplicates some of TerminalConfigHelper.mergeDefaultShellPathAndArgs and should be merged
-			// this._configHelper.mergeDefaultShellPathAndArgs(shellLaunchConfig);
+			// TODO: This duplicates some of TerminalConfigHelper.mergeDefaultShellPathAndArgs and should be merged id:72
+   // this._configHelper.mergeDefaultShellPathAndArgs(shellLaunchConfig);
 
 			const platformKey = platform.isWindows ? 'windows' : platform.isMacintosh ? 'osx' : 'linux';
 			const shellConfigValue: string = terminalConfig.get(`shell.${platformKey}`);
@@ -383,16 +383,16 @@ export class ExtHostTerminalService implements ExtHostTerminalServiceShape {
 			shellLaunchConfig.args = shellArgsConfigValue;
 		}
 
-		// TODO: @daniel
+		// TODO:  id:48 @daniel
 		const activeWorkspaceRootUri = URI.revive(activeWorkspaceRootUriComponents);
 		const initialCwd = terminalEnvironment.getCwd(shellLaunchConfig, activeWorkspaceRootUri, terminalConfig.cwd);
 
-		// TODO: Pull in and resolve config settings
-		// // Resolve env vars from config and shell
-		// const lastActiveWorkspaceRoot = this._workspaceContextService.getWorkspaceFolder(lastActiveWorkspaceRootUri);
-		// const platformKey = platform.isWindows ? 'windows' : (platform.isMacintosh ? 'osx' : 'linux');
-		// const envFromConfig = terminalEnvironment.resolveConfigurationVariables(this._configurationResolverService, { ...this._configHelper.config.env[platformKey] }, lastActiveWorkspaceRoot);
-		// const envFromShell = terminalEnvironment.resolveConfigurationVariables(this._configurationResolverService, { ...shellLaunchConfig.env }, lastActiveWorkspaceRoot);
+		// TODO: Pull in and resolve config settings id:121
+  // // Resolve env vars from config and shell
+  // const lastActiveWorkspaceRoot = this._workspaceContextService.getWorkspaceFolder(lastActiveWorkspaceRootUri);
+  // const platformKey = platform.isWindows ? 'windows' : (platform.isMacintosh ? 'osx' : 'linux');
+  // const envFromConfig = terminalEnvironment.resolveConfigurationVariables(this._configurationResolverService, { ...this._configHelper.config.env[platformKey] }, lastActiveWorkspaceRoot);
+  // const envFromShell = terminalEnvironment.resolveConfigurationVariables(this._configurationResolverService, { ...shellLaunchConfig.env }, lastActiveWorkspaceRoot);
 
 		// Merge process env with the env from config
 		const env = { ...process.env };

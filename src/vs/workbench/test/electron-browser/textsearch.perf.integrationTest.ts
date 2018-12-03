@@ -44,7 +44,7 @@ suite.skip('TextSearch performance (integration)', () => {
 
 	test('Measure', () => {
 		if (process.env['VSCODE_PID']) {
-			return undefined; // TODO@Rob find out why test fails when run from within VS Code
+			return undefined; // TODO find out why test fails when run from within VS Code id:195 @Rob
 		}
 
 		const n = 3;

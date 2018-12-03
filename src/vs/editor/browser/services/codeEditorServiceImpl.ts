@@ -210,7 +210,7 @@ class DecorationTypeOptionsProvider implements IModelDecorationOptionsProvider {
 
 const _CSS_MAP: { [prop: string]: string; } = {
 	color: 'color:{0} !important;',
-	opacity: 'opacity:{0}; will-change: opacity;', // TODO@Ben: 'will-change: opacity' is a workaround for https://github.com/Microsoft/vscode/issues/52196
+	opacity: 'opacity:{0}; will-change: opacity;', // TODO 'will-change: opacity' is a workaround for https://github.com/Microsoft/vscode/issues/52196 id:105 @Ben:
 	backgroundColor: 'background-color:{0};',
 
 	outline: 'outline:{0};',

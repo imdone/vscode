@@ -168,7 +168,7 @@ export class Controller extends WorkbenchTreeController {
 	) {
 		super({}, configurationService);
 
-		// TODO@Sandeep this should be a command
+		// TODO this should be a command id:220 @Sandeep
 		this.downKeyBindingDispatcher.set(KeyMod.CtrlCmd | KeyCode.Enter, (tree: ITree, event: any) => this.openExtension(tree, true));
 	}
 

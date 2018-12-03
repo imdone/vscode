@@ -389,7 +389,7 @@ export class IndexTreeModel<T extends Exclude<any, undefined>, TFilterData = voi
 			throw new Error('Invalid tree location');
 		}
 
-		// TODO@joao perf!
+		// TODO perf! id:53 @joao
 		for (let i = 0; i < index; i++) {
 			listIndex += node.children[i].renderNodeCount;
 		}
@@ -407,7 +407,7 @@ export class IndexTreeModel<T extends Exclude<any, undefined>, TFilterData = voi
 		return this.getTreeNode(location);
 	}
 
-	// TODO@joao perf!
+	// TODO perf! id:29 @joao
 	getNodeLocation(node: ITreeNode<T, TFilterData>): number[] {
 		const location: number[] = [];
 

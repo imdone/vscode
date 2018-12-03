@@ -853,7 +853,7 @@ export class SelectionHighlighter extends Disposable implements IEditorContribut
 			return null;
 		}
 
-		// TODO: better handling of this case
+		// TODO: better handling of this case id:62
 		const findState = findController.getState();
 		const caseSensitive = findState.matchCase;
 

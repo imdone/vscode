@@ -649,7 +649,7 @@ export class Repository {
 		return this.repositoryRoot;
 	}
 
-	// TODO@Joao: rename to exec
+	// TODO rename to exec id:10 @Joao:
 	async run(args: string[], options: SpawnOptions = {}): Promise<IExecutionResult<string>> {
 		return await this.git.exec(this.repositoryRoot, args, options);
 	}
@@ -817,7 +817,7 @@ export class Repository {
 		if (encoding) {
 			return { mimetype: 'text/plain', encoding };
 		} else {
-			// TODO@JOAO: read the setting OUTSIDE!
+			// TODO read the setting OUTSIDE! id:93 @JOAO:
 			return { mimetype: 'text/plain' };
 		}
 	}

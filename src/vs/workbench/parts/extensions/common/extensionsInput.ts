@@ -34,7 +34,7 @@ export class ExtensionsInput extends EditorInput {
 
 		const otherExtensionInput = other as ExtensionsInput;
 
-		// TODO@joao is this correct?
+		// TODO is this correct? id:202 @joao
 		return this.extension === otherExtensionInput.extension;
 	}
 

@@ -46,20 +46,20 @@
 	background-image: url('arrow-expand-dark.svg');
 }
 
-/* TODO: actions should be part of the panel, but they aren't yet */
+/* TODO: actions should be part of the panel, but they aren't yet .monaco-panel-view .panel > .panel-header > .actions { display: none; flex: 1; } id:98 .monaco-panel-view .panel > .panel-header > .actions { 	display: none; 	flex: 1; } */
 .monaco-panel-view .panel > .panel-header > .actions {
 	display: none;
 	flex: 1;
 }
 
-/* TODO: actions should be part of the panel, but they aren't yet */
+/* TODO: actions should be part of the panel, but they aren't yet .monaco-panel-view . > .panel-header.expanded > .actions, .monaco-panel-view .panel > .panel-header.actions-always-visible.expanded > .actions, .monaco-panel-view .panel > .panel-header.focused.expanded > .actions { display: initial; } id:9 panel:hover .monaco-panel-view .panel:hover > .panel-header.expanded > .actions, .monaco-panel-view .panel > .panel-header.actions-always-visible.expanded > .actions, .monaco-panel-view .panel > .panel-header.focused.expanded > .actions { 	display: initial; } */
 .monaco-panel-view .panel:hover > .panel-header.expanded > .actions,
 .monaco-panel-view .panel > .panel-header.actions-always-visible.expanded > .actions,
 .monaco-panel-view .panel > .panel-header.focused.expanded > .actions {
 	display: initial;
 }
 
-/* TODO: actions should be part of the panel, but they aren't yet */
+/* TODO: actions should be part of the panel, but they aren't yet .monaco-panel-view .panel > .panel-header > .actions .action-label.icon { width: 28px; height: 22px; background-size: 16px; background-position: center center; background-repeat: no-repeat; margin-right: 0; } id:52 .monaco-panel-view .panel > .panel-header > .actions .action-label.icon { 	width: 28px; 	height: 22px; 	background-size: 16px; 	background-position: center center; 	background-repeat: no-repeat; 	margin-right: 0; } */
 .monaco-panel-view .panel > .panel-header > .actions .action-label.icon {
 	width: 28px;
 	height: 22px;

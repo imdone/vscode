@@ -48,7 +48,7 @@ export interface ISearchHistoryService {
 }
 
 /**
- * TODO@roblou - split text from file search entirely, or share code in a more natural way.
+ * TODO - split text from file search entirely, or share code in a more natural way. id:66 @roblou
  */
 export const enum SearchProviderType {
 	file,
@@ -90,7 +90,7 @@ export interface IFileQueryProps<U extends UriComponents> extends ICommonQueryPr
 	type: QueryType.File;
 	filePattern?: string;
 
-	// TODO: Remove this!
+	// TODO: Remove this! id:42
 	disregardExcludeSettings?: boolean;
 
 	/**

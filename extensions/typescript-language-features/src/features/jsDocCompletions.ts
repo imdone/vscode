@@ -92,7 +92,7 @@ class JsDocCompletionProvider implements vscode.CompletionItemProvider {
 }
 
 export function templateToSnippet(template: string): vscode.SnippetString {
-	// TODO: use append placeholder
+	// TODO: use append placeholder id:2
 	let snippetIndex = 1;
 	template = template.replace(/\$/g, '\\$');
 	template = template.replace(/^\s*(?=(\/|[ ]\*))/gm, '');

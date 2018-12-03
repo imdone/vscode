@@ -787,7 +787,7 @@ export class DebugSession implements IDebugSession {
 	}
 
 	private getUriKey(uri: URI): string {
-		// TODO: the following code does not make sense if uri originates from a different platform
+		// TODO: the following code does not make sense if uri originates from a different platform id:155
 		return platform.isLinux ? uri.toString() : uri.toString().toLowerCase();
 	}
 

@@ -433,7 +433,7 @@ export class UpdateContribution implements IGlobalActivity {
 			run: () => { }
 		}];
 
-		// TODO@joao check why snap updates send `update` as falsy
+		// TODO check why snap updates send `update` as falsy id:230 @joao
 		if (update.productVersion) {
 			actions.push({
 				label: nls.localize('releaseNotes', "Release Notes"),

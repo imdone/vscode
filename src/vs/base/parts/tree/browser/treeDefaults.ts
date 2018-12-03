@@ -136,7 +136,7 @@ export class DefaultController implements _.IController {
 					return false;
 				}
 
-				if (dom.findParentWithClass(event.target, 'monaco-action-bar', 'row')) { // TODO@Joao not very nice way of checking for the action bar (implicit knowledge)
+				if (dom.findParentWithClass(event.target, 'monaco-action-bar', 'row')) { // TODO not very nice way of checking for the action bar (implicit knowledge) id:19 @Joao
 					return false; // Ignore event if target is over an action bar of the row
 				}
 			}
@@ -264,7 +264,7 @@ export class DefaultController implements _.IController {
 	private onKey(bindings: KeybindingDispatcher, tree: _.ITree, event: IKeyboardEvent): boolean {
 		const handler: any = bindings.dispatch(event.toKeybinding());
 		if (handler) {
-			// TODO: TS 3.1 upgrade. Why are we checking against void?
+			// TODO: TS 3.1 upgrade. Why are we checking against void? id:102
 			if (handler(tree, event)) {
 				event.preventDefault();
 				event.stopPropagation();

@@ -53,8 +53,8 @@ Registry.add(Extensions.WorkbenchActions, new class implements IWorkbenchActionR
 		});
 
 		// menu item
-		// TODO@Rob slightly weird if-check required because of
-		// https://github.com/Microsoft/vscode/blob/master/src/vs/workbench/parts/search/electron-browser/search.contribution.ts#L266
+		// TODO slightly weird if-check required because of id:197 @Rob
+  // https://github.com/Microsoft/vscode/blob/master/src/vs/workbench/parts/search/electron-browser/search.contribution.ts#L266
 		if (descriptor.label) {
 
 			let idx = alias.indexOf(': ');
@@ -75,9 +75,9 @@ Registry.add(Extensions.WorkbenchActions, new class implements IWorkbenchActionR
 			registrations.push(MenuRegistry.appendMenuItem(MenuId.CommandPalette, { command, when }));
 		}
 
-		// TODO@alex,joh
-		// support removal of keybinding rule
-		// support removal of command-ui
+		// TODO  id:123 @alex,joh
+  // support removal of keybinding rule
+  // support removal of command-ui
 		return combinedDisposable(registrations);
 	}
 

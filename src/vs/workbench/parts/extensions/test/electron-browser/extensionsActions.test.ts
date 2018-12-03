@@ -1254,7 +1254,7 @@ suite('ExtensionsActions Test', () => {
 
 
 	test(`RecommendToFolderAction`, () => {
-		// TODO: Implement test
+		// TODO: Implement test id:157
 	});
 
 	function aLocalExtension(name: string = 'someext', manifest: any = {}, properties: any = {}): ILocalExtension {

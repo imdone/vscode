@@ -80,8 +80,8 @@ declare module 'vscode' {
 
 	/**
 	 * A file glob pattern to match file paths against.
-	 * TODO@roblou - merge this with the GlobPattern docs/definition in vscode.d.ts.
-	 * @see [GlobPattern](#GlobPattern)
+	 * TODO - merge this with the GlobPattern docs/definition in vscode.d.ts. id:92 @roblou
+* @see [GlobPattern](#GlobPattern)
 	 */
 	export type GlobString = string;
 

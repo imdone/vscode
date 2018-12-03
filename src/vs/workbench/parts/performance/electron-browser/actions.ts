@@ -226,7 +226,7 @@ export class ShowStartupPerformance extends Action {
 }
 
 
-// NOTE: This is still used when running --prof-startup, which already opens a dialog, so the reporter is not used.
+// NOTE: This is still used when running --prof-startup, which already opens a dialog, so the reporter is not used. id:221
 export class ReportPerformanceIssueAction extends Action {
 
 	static readonly ID = 'workbench.action.reportPerformanceIssue';

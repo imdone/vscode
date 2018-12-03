@@ -367,7 +367,7 @@ export class SettingsEditor2 extends BaseEditor {
 		}, searchBoxLabel, 'settingseditor:searchinput' + SettingsEditor2.NUM_INSTANCES++, {
 				placeholderText: searchBoxLabel,
 				focusContextKey: this.searchFocusContextKey,
-				// TODO: Aria-live
+				// TODO: Aria-live id:222
 			})
 		);
 
@@ -402,7 +402,7 @@ export class SettingsEditor2 extends BaseEditor {
 	private onDidSettingsTargetChange(target: SettingsTarget): void {
 		this.viewState.settingsTarget = target;
 
-		// TODO Instead of rebuilding the whole model, refresh and uncache the inspected setting value
+		// TODO Instead of rebuilding the whole model, refresh and uncache the inspected setting value id:204
 		this.onConfigUpdate(undefined, true);
 	}
 
@@ -632,7 +632,7 @@ export class SettingsEditor2 extends BaseEditor {
 		this.settingsTree.getHTMLElement().attributes.removeNamedItem('tabindex');
 
 		// Have to redefine role of the tree widget to form for input elements
-		// TODO:CDL make this an option for tree
+		// TODO: CDL make this an option for tree id:130
 		this.settingsTree.getHTMLElement().setAttribute('role', 'form');
 
 		this._register(this.settingsTree.onDidScroll(() => {
@@ -950,8 +950,8 @@ export class SettingsEditor2 extends BaseEditor {
 		if (key) {
 			const elements = this.currentSettingsModel.getElementsByName(key);
 			if (elements && elements.length) {
-				// TODO https://github.com/Microsoft/vscode/issues/57360
-				// refreshP = Promise.join(elements.map(e => this.settingsTree.refresh(e)));
+				// TODO https://github.com/Microsoft/vscode/issues/57360 id:159
+    // refreshP = Promise.join(elements.map(e => this.settingsTree.refresh(e)));
 				refreshP = this.settingsTree.refresh();
 			} else {
 				// Refresh requested for a key that we don't know about

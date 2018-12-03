@@ -205,13 +205,13 @@ export abstract class ReferencesController implements editorCommon.IEditorContri
 			this._ignoreModelChangeEvent = false;
 
 			if (!openedEditor || openedEditor !== this._editor) {
-				// TODO@Alex TODO@Joh
-				// when opening the current reference we might end up
-				// in a different editor instance. that means we also have
-				// a different instance of this reference search controller
-				// and cannot hold onto the widget (which likely doesn't
-				// exist). Instead of bailing out we should find the
-				// 'sister' action and pass our current model on to it.
+				// TODO TODO@Joh id:38 @Alex
+    // when opening the current reference we might end up
+    // in a different editor instance. that means we also have
+    // a different instance of this reference search controller
+    // and cannot hold onto the widget (which likely doesn't
+    // exist). Instead of bailing out we should find the
+    // 'sister' action and pass our current model on to it.
 				this.closeWidget();
 				return;
 			}

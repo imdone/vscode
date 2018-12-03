@@ -387,7 +387,7 @@ export class RawDebugSession {
 	public stepBack(args: DebugProtocol.StepBackArguments): Promise<DebugProtocol.StepBackResponse> {
 		if (this.capabilities.supportsStepBack) {
 			return this.send('stepBack', args).then(response => {
-				if (response.body === undefined) {	// TODO@AW why this check?
+				if (response.body === undefined) {	// TODO why this check? id:179 @AW
 					this.fireSimulatedContinuedEvent(args.threadId);
 				}
 				return response;
@@ -399,7 +399,7 @@ export class RawDebugSession {
 	public reverseContinue(args: DebugProtocol.ReverseContinueArguments): Promise<DebugProtocol.ReverseContinueResponse> {
 		if (this.capabilities.supportsStepBack) {
 			return this.send('reverseContinue', args).then(response => {
-				if (response.body === undefined) {	// TODO@AW why this check?
+				if (response.body === undefined) {	// TODO why this check? id:219 @AW
 					this.fireSimulatedContinuedEvent(args.threadId);
 				}
 				return response;

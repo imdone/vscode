@@ -258,8 +258,8 @@ export class ExtHostDebugService implements ExtHostDebugServiceShape {
 		this._debugServiceProxy.$registerDebugConfigurationProvider(type,
 			!!provider.provideDebugConfigurations,
 			!!provider.resolveDebugConfiguration,
-			!!provider.debugAdapterExecutable,		// TODO@AW: deprecated
-			!!provider.provideDebugAdapterTracker,	// TODO@AW: deprecated
+			!!provider.debugAdapterExecutable,		// TODO deprecated id:146 @AW:
+			!!provider.provideDebugAdapterTracker,	// TODO deprecated id:170 @AW:
 			handle);
 
 		return new Disposable(() => {
@@ -460,7 +460,7 @@ export class ExtHostDebugService implements ExtHostDebugServiceShape {
 		// VS Code -> DA
 		message = convertToDAPaths(message, source => uriToString(source));
 
-		const tracker = this._debugAdaptersTrackers.get(debugAdapterHandle);	// TODO@AW: same handle?
+		const tracker = this._debugAdaptersTrackers.get(debugAdapterHandle);	// TODO same handle? id:69 @AW:
 		if (tracker) {
 			tracker.onWillReceiveMessage(message);
 		}
@@ -572,7 +572,7 @@ export class ExtHostDebugService implements ExtHostDebugServiceShape {
 		return asThenable(() => provider.resolveDebugConfiguration(this.getFolder(folderUri), debugConfiguration, CancellationToken.None));
 	}
 
-	// TODO@AW legacy
+	// TODO legacy id:45 @AW
 	public $legacyDebugAdapterExecutable(configProviderHandle: number, folderUri: UriComponents | undefined): Thenable<IAdapterDescriptor> {
 		let provider = this.getConfigProviderByHandle(configProviderHandle);
 		if (!provider) {
@@ -732,7 +732,7 @@ export class ExtHostDebugService implements ExtHostDebugServiceShape {
 			return Promise.resolve(new DebugAdapterServer(serverPort));
 		}
 
-		// TODO@AW legacy
+		// TODO legacy id:118 @AW
 		const pairs = this._configProviders.filter(p => p.type === session.type);
 		if (pairs.length > 0) {
 			if (pairs[0].provider.debugAdapterExecutable) {
@@ -746,7 +746,7 @@ export class ExtHostDebugService implements ExtHostDebugServiceShape {
 		}
 
 		// try deprecated command based extension API "adapterExecutableCommand" to determine the executable
-		// TODO@AW legacy
+		// TODO legacy id:147 @AW
 		const aex = this._aexCommands.get(session.type);
 		if (aex) {
 			const folder = session.workspaceFolder;

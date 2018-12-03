@@ -963,7 +963,7 @@ interface JQueryStatic {
     error(message: any): JQuery;
 
     expr: any;
-    fn: any;  //TODO: Decide how we want to type this
+    fn: any;  //TODO: Decide how we want to type this id:1
 
     isReady: boolean;
 

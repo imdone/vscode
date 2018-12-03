@@ -1568,7 +1568,7 @@ function getContext(listWidget: ListWidget, viewletService: IViewletService): IE
 	return { stat, selection: selection && selection.indexOf(stat) >= 0 ? selection : [], viewletState: (<ExplorerViewlet>viewletService.getActiveViewlet()).getViewletState() };
 }
 
-// TODO@isidor these commands are calling into actions due to the complex inheritance action structure.
+// TODO these commands are calling into actions due to the complex inheritance action structure. id:181 @isidor
 // It should be the other way around, that actions call into commands.
 function openExplorerAndRunAction(accessor: ServicesAccessor, constructor: IConstructorSignature2<ITree, ExplorerItem, Action>): TPromise<any> {
 	const instantationService = accessor.get(IInstantiationService);

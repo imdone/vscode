@@ -731,7 +731,7 @@ export namespace CompletionItem {
 			result.insertText = suggestion.insertText;
 			result.textEdit = new types.TextEdit(result.range, result.insertText);
 		}
-		// TODO additionalEdits, command
+		// TODO additionalEdits, command id:150
 
 		return result;
 	}

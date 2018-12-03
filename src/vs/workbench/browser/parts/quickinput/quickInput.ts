@@ -55,7 +55,7 @@ const backButton = {
 		light: URI.parse(require.toUrl('vs/workbench/browser/parts/quickinput/media/light/arrow-left.svg'))
 	},
 	tooltip: localize('quickInput.back', "Back"),
-	handle: -1 // TODO
+	handle: -1 // TODO  id:196
 };
 
 interface QuickInputUI {
@@ -524,7 +524,7 @@ class QuickPick<T extends IQuickPickItem> extends QuickInput implements IQuickPi
 				this.registerQuickNavigation()
 			);
 		}
-		super.show(); // TODO: Why have show() bubble up while update() trickles down? (Could move setComboboxAccessibility() here.)
+		super.show(); // TODO: Why have show() bubble up while update() trickles down? (Could move setComboboxAccessibility() here.) id:122
 	}
 
 	private registerQuickNavigation() {
@@ -1255,7 +1255,7 @@ export class QuickInputService extends Component implements IQuickInputService {
 		this.ui.message.style.display = visibilities.message ? '' : 'none';
 		this.ui.list.display(visibilities.list);
 		this.ui.container.classList[visibilities.checkAll ? 'add' : 'remove']('show-checkboxes');
-		this.updateLayout(); // TODO
+		this.updateLayout(); // TODO  id:151
 	}
 
 	private setComboboxAccessibility(enabled: boolean) {
@@ -1370,7 +1370,7 @@ export class QuickInputService extends Component implements IQuickInputService {
 	protected updateStyles() {
 		const theme = this.themeService.getTheme();
 		if (this.ui) {
-			// TODO
+			// TODO  id:175
 			const titleColor = { dark: 'rgba(255, 255, 255, 0.105)', light: 'rgba(0,0,0,.06)', hc: 'black' }[theme.type];
 			this.titleBar.style.backgroundColor = titleColor ? titleColor.toString() : null;
 			this.ui.inputBox.style(theme);

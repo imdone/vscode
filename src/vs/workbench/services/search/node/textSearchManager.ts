@@ -79,7 +79,7 @@ export class TextSearchManager {
 		const testingPs: Promise<void>[] = [];
 		const progress = {
 			report: (result: vscode.TextSearchResult) => {
-				// TODO: validate result.ranges vs result.preview.matches
+				// TODO: validate result.ranges vs result.preview.matches id:234
 
 				const hasSibling = folderQuery.folder.scheme === 'file' ?
 					glob.hasSiblingPromiseFn(() => {

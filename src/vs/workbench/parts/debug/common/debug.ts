@@ -451,7 +451,7 @@ export interface IConfig extends IEnvConfig {
 	__sessionId?: string;
 	__restart?: any;
 	__autoAttach?: boolean;
-	port?: number; // TODO
+	port?: number; // TODO  id:125
 }
 
 export interface ICompound {
@@ -537,7 +537,7 @@ export interface IDebugConfigurationProvider {
 	readonly type: string;
 	resolveDebugConfiguration?(folderUri: uri | undefined, debugConfiguration: IConfig): Promise<IConfig>;
 	provideDebugConfigurations?(folderUri: uri | undefined): Promise<IConfig[]>;
-	debugAdapterExecutable?(folderUri: uri | undefined): Promise<IAdapterDescriptor>;		// TODO@AW legacy
+	debugAdapterExecutable?(folderUri: uri | undefined): Promise<IAdapterDescriptor>;		// TODO legacy id:154 @AW
 	hasTracker: boolean;
 }
 

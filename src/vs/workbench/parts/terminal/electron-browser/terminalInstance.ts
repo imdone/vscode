@@ -81,10 +81,10 @@ export class TerminalInstance implements ITerminalInstance {
 	public get id(): number { return this._id; }
 	public get cols(): number { return this._cols; }
 	public get rows(): number { return this._rows; }
-	// TODO: Ideally processId would be merged into processReady
+	// TODO: Ideally processId would be merged into processReady id:227
 	public get processId(): number | undefined { return this._processManager ? this._processManager.shellProcessId : undefined; }
-	// TODO: How does this work with detached processes?
-	// TODO: Should this be an event as it can fire twice?
+	// TODO: How does this work with detached processes? id:209
+	// TODO: Should this be an event as it can fire twice? id:135
 	public get processReady(): Promise<void> { return this._processManager ? this._processManager.ptyProcessReady : Promise.resolve(void 0); }
 	public get title(): string { return this._title; }
 	public get hadFocusOnExit(): boolean { return this._hadFocusOnExit; }
@@ -299,9 +299,9 @@ export class TerminalInstance implements ITerminalInstance {
 			macOptionIsMeta: config.macOptionIsMeta,
 			macOptionClickForcesSelection: config.macOptionClickForcesSelection,
 			rightClickSelectsWord: config.rightClickBehavior === 'selectWord',
-			// TODO: Guess whether to use canvas or dom better
+			// TODO: Guess whether to use canvas or dom better id:164
 			rendererType: config.rendererType === 'auto' ? 'canvas' : config.rendererType,
-			// TODO: Remove this once the setting is removed upstream
+			// TODO: Remove this once the setting is removed upstream id:188
 			experimentalCharAtlas: 'dynamic',
 			experimentalBufferLineImpl: config.experimentalBufferImpl
 		});
@@ -313,7 +313,7 @@ export class TerminalInstance implements ITerminalInstance {
 		if (this._processManager) {
 			this._processManager.onProcessData(data => this._onProcessData(data));
 			this._xterm.on('data', data => this._processManager.write(data));
-			// TODO: How does the cwd work on detached processes?
+			// TODO: How does the cwd work on detached processes? id:228
 			this._linkHandler = this._instantiationService.createInstance(TerminalLinkHandler, this._xterm, platform.platform);
 			this.processReady.then(() => {
 				this._linkHandler.initialCwd = this._processManager.initialCwd;
@@ -727,9 +727,9 @@ export class TerminalInstance implements ITerminalInstance {
 				const width = parseInt(computedStyle.getPropertyValue('width').replace('px', ''), 10);
 				const height = parseInt(computedStyle.getPropertyValue('height').replace('px', ''), 10);
 				this.layout(new dom.Dimension(width, height));
-				// HACK: Trigger another async layout to ensure xterm's CharMeasure is ready to use,
-				// this hack can be removed when https://github.com/xtermjs/xterm.js/issues/702 is
-				// supported.
+				// HACK: Trigger another async layout to ensure xterm's CharMeasure is ready to use, id:210
+    // this hack can be removed when https://github.com/xtermjs/xterm.js/issues/702 is
+    // supported.
 				setTimeout(() => this.layout(new dom.Dimension(width, height)), 0);
 			}
 		}
@@ -1048,14 +1048,14 @@ export class TerminalInstance implements ITerminalInstance {
 
 			this._xterm.resize(cols, rows);
 			if (this._isVisible) {
-				// HACK: Force the renderer to unpause by simulating an IntersectionObserver event.
-				// This is to fix an issue where dragging the window to the top of the screen to
-				// maximize on Windows/Linux would fire an event saying that the terminal was not
-				// visible.
+				// HACK: Force the renderer to unpause by simulating an IntersectionObserver event. id:136
+    // This is to fix an issue where dragging the window to the top of the screen to
+    // maximize on Windows/Linux would fire an event saying that the terminal was not
+    // visible.
 				if (this._xterm.getOption('rendererType') === 'canvas') {
 					this._xterm._core.renderer.onIntersectionChange({ intersectionRatio: 1 });
-					// HACK: Force a refresh of the screen to ensure links are refresh corrected.
-					// This can probably be removed when the above hack is fixed in Chromium.
+					// HACK: Force a refresh of the screen to ensure links are refresh corrected. id:165
+     // This can probably be removed when the above hack is fixed in Chromium.
 					this._xterm.refresh(0, this._xterm.rows - 1);
 				}
 			}

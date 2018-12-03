@@ -1111,7 +1111,7 @@ export class TerminalTaskSystem implements ITaskSystem {
 	private resolveVariable(resolver: VariableResolver, value: string): string;
 	private resolveVariable(resolver: VariableResolver, value: CommandString): CommandString;
 	private resolveVariable(resolver: VariableResolver, value: CommandString): CommandString {
-		// TODO@Dirk Task.getWorkspaceFolder should return a WorkspaceFolder that is defined in workspace.ts
+		// TODO Task.getWorkspaceFolder should return a WorkspaceFolder that is defined in workspace.ts id:132 @Dirk
 		if (Types.isString(value)) {
 			return resolver.resolve(value);
 		} else {

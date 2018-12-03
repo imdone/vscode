@@ -750,7 +750,7 @@ export class TextFileEditorModel extends BaseTextEditorModel implements ITextFil
 				this._onDidStateChange.fire(StateChange.SAVED);
 			}, error => {
 				if (!error) {
-					error = new Error('Unknown Save Error'); // TODO@remote we should never get null as error (https://github.com/Microsoft/vscode/issues/55051)
+					error = new Error('Unknown Save Error'); // TODO we should never get null as error (https://github.com/Microsoft/vscode/issues/55051) id:240 @remote
 				}
 
 				this.logService.error(`doSave(${versionId}) - exit - resulted in a save error: ${error.toString()}`, this.resource);

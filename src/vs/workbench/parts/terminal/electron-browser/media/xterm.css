@@ -63,8 +63,8 @@
 
 .xterm .xterm-helper-textarea {
 	/*
-	 * HACK: to fix IE's blinking cursor
-	 * Move textarea out of the screen to the far left, so that the cursor is not visible.
+	 * HACK: to fix IE's blinking cursor id:134
+* Move textarea out of the screen to the far left, so that the cursor is not visible.
 	 */
 	position: absolute;
 	opacity: 0;
@@ -80,7 +80,7 @@
 }
 
 .xterm .composition-view {
-	/* TODO: Composition position got messed up somewhere */
+	/* TODO: Composition position got messed up somewhere background: #000; color: #FFF; display: none; position: absolute; white-space: nowrap; z-index: 1; } .xterm .composition-view.active { display: block; } .xterm .xterm-viewport { id:163 	background: #000; 	color: #FFF; 	display: none; 	position: absolute; 	white-space: nowrap; 	z-index: 1; } .xterm .composition-view.active { 	display: block; } .xterm .xterm-viewport { */
 	background: #000;
 	color: #FFF;
 	display: none;

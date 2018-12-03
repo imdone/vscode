@@ -217,7 +217,7 @@ export class ProcessRunnerDetector {
 	}
 
 	private resolveCommandOptions(workspaceFolder: IWorkspaceFolder, options: CommandOptions): CommandOptions {
-		// TODO@Dirk adopt new configuration resolver service https://github.com/Microsoft/vscode/issues/31365
+		// TODO adopt new configuration resolver service https://github.com/Microsoft/vscode/issues/31365 id:161 @Dirk
 		let result = Objects.deepClone(options);
 		if (result.cwd) {
 			result.cwd = this.configurationResolverService.resolve(workspaceFolder, result.cwd);
@@ -229,7 +229,7 @@ export class ProcessRunnerDetector {
 	}
 
 	private tryDetectGulp(workspaceFolder: IWorkspaceFolder, list: boolean): TPromise<DetectorResult> {
-		return this.fileService.resolveFile(workspaceFolder.toResource('gulpfile.js')).then((stat) => { // TODO@Dirk (https://github.com/Microsoft/vscode/issues/29454)
+		return this.fileService.resolveFile(workspaceFolder.toResource('gulpfile.js')).then((stat) => { // TODO (https://github.com/Microsoft/vscode/issues/29454) id:185 @Dirk
 			let config = ProcessRunnerDetector.detectorConfig('gulp');
 			let process = new LineProcess('gulp', [config.arg, '--no-color'], true, { cwd: this._cwd });
 			return this.runDetection(process, 'gulp', true, config.matcher, ProcessRunnerDetector.DefaultProblemMatchers, list);
@@ -239,7 +239,7 @@ export class ProcessRunnerDetector {
 	}
 
 	private tryDetectGrunt(workspaceFolder: IWorkspaceFolder, list: boolean): TPromise<DetectorResult> {
-		return this.fileService.resolveFile(workspaceFolder.toResource('Gruntfile.js')).then((stat) => { // TODO@Dirk (https://github.com/Microsoft/vscode/issues/29454)
+		return this.fileService.resolveFile(workspaceFolder.toResource('Gruntfile.js')).then((stat) => { // TODO (https://github.com/Microsoft/vscode/issues/29454) id:225 @Dirk
 			let config = ProcessRunnerDetector.detectorConfig('grunt');
 			let process = new LineProcess('grunt', [config.arg, '--no-color'], true, { cwd: this._cwd });
 			return this.runDetection(process, 'grunt', true, config.matcher, ProcessRunnerDetector.DefaultProblemMatchers, list);
@@ -254,10 +254,10 @@ export class ProcessRunnerDetector {
 			let process = new LineProcess('jake', [config.arg], true, { cwd: this._cwd });
 			return this.runDetection(process, 'jake', true, config.matcher, ProcessRunnerDetector.DefaultProblemMatchers, list);
 		};
-		return this.fileService.resolveFile(workspaceFolder.toResource('Jakefile')).then((stat) => { // TODO@Dirk (https://github.com/Microsoft/vscode/issues/29454)
+		return this.fileService.resolveFile(workspaceFolder.toResource('Jakefile')).then((stat) => { // TODO (https://github.com/Microsoft/vscode/issues/29454) id:207 @Dirk
 			return run();
 		}, (err: any) => {
-			return this.fileService.resolveFile(workspaceFolder.toResource('Jakefile.js')).then((stat) => { // TODO@Dirk (https://github.com/Microsoft/vscode/issues/29454)
+			return this.fileService.resolveFile(workspaceFolder.toResource('Jakefile.js')).then((stat) => { // TODO (https://github.com/Microsoft/vscode/issues/29454) id:133 @Dirk
 				return run();
 			}, (err: any) => {
 				return null;

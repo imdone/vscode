@@ -146,7 +146,7 @@ export class StorageService extends Disposable implements IStorageService {
 		});
 	}
 
-	// TODO@Ben remove migration after a while
+	// TODO remove migration after a while id:144 @Ben
 	private migrateWorkspaceStorage(payload: IWorkspaceInitializationPayload): Thenable<void> {
 		mark('willMigrateWorkspaceStorageKeys');
 		return readdir(this.environmentService.extensionsPath).then(extensions => {

@@ -47,7 +47,7 @@
 	width: 100%;
 }
 
-/* TODO@tokenization bootstrap fix */
+/* TODO bootstrap fix .monaco-editor .view-line > span > span { float: none; min-height: inherit; margin-left: inherit; id:59 @tokenization .monaco-editor .view-line > span > span { 	float: none; 	min-height: inherit; 	margin-left: inherit; */
 /*.monaco-editor .view-line > span > span {
 	float: none;
 	min-height: inherit;

@@ -39,7 +39,7 @@ export class TerminalProcessExtHostProxy implements ITerminalChildProcess, ITerm
 		@IExtensionService private readonly _extensionService: IExtensionService
 	) {
 		this._extensionService.whenInstalledExtensionsRegistered().then(() => {
-			// TODO: MainThreadTerminalService is not ready at this point, fix this
+			// TODO: MainThreadTerminalService is not ready at this point, fix this id:190
 			setTimeout(() => {
 				this._terminalService.requestExtHostProcess(this, shellLaunchConfig, activeWorkspaceRootUri, cols, rows);
 			}, 0);

@@ -105,7 +105,7 @@ class ViewDescriptorCollection extends Disposable implements IViewDescriptorColl
 		for (const viewDescriptor of viewDescriptors) {
 			const item = {
 				viewDescriptor,
-				active: this.isViewDescriptorActive(viewDescriptor) // TODO: should read from some state?
+				active: this.isViewDescriptorActive(viewDescriptor) // TODO: should read from some state? id:74
 			};
 
 			this.items.push(item);

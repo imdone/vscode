@@ -103,7 +103,7 @@ export class TerminalService extends AbstractTerminalService implements ITermina
 	public requestExtHostProcess(proxy: ITerminalProcessExtHostProxy, shellLaunchConfig: IShellLaunchConfig, activeWorkspaceRootUri: URI, cols: number, rows: number): void {
 		// Ensure extension host is ready before requesting a process
 		this._extensionService.whenInstalledExtensionsRegistered().then(() => {
-			// TODO: MainThreadTerminalService is not ready at this point, fix this
+			// TODO: MainThreadTerminalService is not ready at this point, fix this id:211
 			setTimeout(() => {
 				this._onInstanceRequestExtHostProcess.fire({ proxy, shellLaunchConfig, activeWorkspaceRootUri, cols, rows });
 			}, 500);

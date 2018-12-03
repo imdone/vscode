@@ -145,11 +145,11 @@ suite('Decoration Render Options', () => {
 		s = new TestCodeEditorServiceImpl(themeServiceMock, styleSheet);
 		s.registerDecorationType('example', { gutterIconPath: URI.file('c:\\files\\miles\\more.png') });
 		sheet = readStyleSheet(styleSheet);
-		// TODO@Alex test fails
-		// assert(
-		// 	sheet.indexOf('background: url(\'file:///c%3A/files/miles/more.png\') center center no-repeat;') > 0
-		// 	|| sheet.indexOf('background: url("file:///c%3A/files/miles/more.png") center center no-repeat;') > 0
-		// );
+		// TODO test fails id:140 @Alex
+  // assert(
+  // 	sheet.indexOf('background: url(\'file:///c%3A/files/miles/more.png\') center center no-repeat;') > 0
+  // 	|| sheet.indexOf('background: url("file:///c%3A/files/miles/more.png") center center no-repeat;') > 0
+  // );
 
 		// URI, only minimal encoding
 		s = new TestCodeEditorServiceImpl(themeServiceMock, styleSheet);

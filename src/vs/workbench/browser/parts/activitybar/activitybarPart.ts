@@ -189,11 +189,11 @@ export class ActivitybarPart extends Part {
 
 		this.createGlobalActivityActionBar(globalActivities);
 
-		// TODO@Ben: workaround for https://github.com/Microsoft/vscode/issues/45700
-		// It looks like there are rendering glitches on macOS with Chrome 61 when
-		// using --webkit-mask with a background color that is different from the image
-		// The workaround is to promote the element onto its own drawing layer. We do
-		// this only after the workbench has loaded because otherwise there is ugly flicker.
+		// TODO workaround for https://github.com/Microsoft/vscode/issues/45700 id:174 @Ben:
+  // It looks like there are rendering glitches on macOS with Chrome 61 when
+  // using --webkit-mask with a background color that is different from the image
+  // The workaround is to promote the element onto its own drawing layer. We do
+  // this only after the workbench has loaded because otherwise there is ugly flicker.
 		if (isMacintosh) {
 			this.lifecycleService.when(LifecyclePhase.Restored).then(() => {
 				scheduleAtNextAnimationFrame(() => { // another delay...
@@ -392,7 +392,7 @@ export class ActivitybarPart extends Part {
 	}
 
 	private getViewContainer(viewletId: string): ViewContainer | undefined {
-		// TODO: @Joao Remove this after moving SCM Viewlet to ViewContainerViewlet - https://github.com/Microsoft/vscode/issues/49054
+		// TODO: Remove this after moving SCM Viewlet to ViewContainerViewlet - https://github.com/Microsoft/vscode/issues/49054 id:73 @Joao
 		if (viewletId === SCM_VIEWLET_ID) {
 			return null;
 		}

@@ -160,7 +160,7 @@ export class StorageMainService extends Disposable implements IStorageMainServic
 				// Migrate storage if this is the first start and we are not using in-memory
 				let migrationPromise: Thenable<void>;
 				if (!useInMemoryStorage && !exists) {
-					// TODO@Ben remove global storage migration and move Storage creation back to ctor
+					// TODO remove global storage migration and move Storage creation back to ctor id:115 @Ben
 					migrationPromise = this.migrateGlobalStorage().then(() => this.logService.info('[storage] migrated global storage'), error => this.logService.error(`[storage] migration error ${error}`));
 				} else {
 					migrationPromise = Promise.resolve();

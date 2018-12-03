@@ -66,7 +66,7 @@ export const xhrRequest: IRequestFunction = (options: IRequestOptions, token: Ca
 			xhr.timeout = options.timeout;
 		}
 
-		// TODO: remove any
+		// TODO: remove any id:90
 		xhr.send(options.data as any);
 
 		// cancel

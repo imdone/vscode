@@ -127,7 +127,7 @@ export default class MergeDecorator implements vscode.Disposable {
 
 	dispose() {
 
-		// TODO: Replace with Map<string, T>
+		// TODO: Replace with Map<string, T> id:94
 		Object.keys(this.decorations).forEach(name => {
 			this.decorations[name].dispose();
 		});
@@ -196,7 +196,7 @@ export default class MergeDecorator implements vscode.Disposable {
 			};
 
 			conflicts.forEach(conflict => {
-				// TODO, this could be more effective, just call getMatchPositions once with a map of decoration to position
+				// TODO , this could be more effective, just call getMatchPositions once with a map of decoration to position id:5
 				if (!conflict.current.decoratorContent.isEmpty) {
 					pushDecoration('current.content', conflict.current.decoratorContent);
 				}

@@ -553,7 +553,7 @@ export class ExtensionScanner {
 			refs.sort((a, b) => a.name < b.name ? -1 : 1);
 
 			if (!isBuiltin) {
-				// TODO: align with extensionsService
+				// TODO: align with extensionsService id:192
 				const nonGallery: IExtensionReference[] = [];
 				const gallery: IExtensionReference[] = [];
 

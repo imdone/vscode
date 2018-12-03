@@ -324,7 +324,7 @@ export class ExecutableDebugAdapter extends StreamDebugAdapter {
 					// relative path
 					if (this.adapterExecutable.command.indexOf('/') < 0 && this.adapterExecutable.command.indexOf('\\') < 0) {
 						// no separators: command looks like a runtime name like 'node' or 'mono'
-						// TODO: check that the runtime is available on PATH
+						// TODO: check that the runtime is available on PATH id:127
 					}
 				}
 			} else {
@@ -436,7 +436,7 @@ export class ExecutableDebugAdapter extends StreamDebugAdapter {
 
 		const result: IDebuggerContribution = Object.create(null);
 		if (contribution.runtime) {
-			if (contribution.runtime.indexOf('./') === 0) {	// TODO
+			if (contribution.runtime.indexOf('./') === 0) {	// TODO  id:156
 				result.runtime = paths.join(extensionFolderPath, contribution.runtime);
 			} else {
 				result.runtime = contribution.runtime;

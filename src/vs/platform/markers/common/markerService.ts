@@ -84,7 +84,7 @@ class MarkerStats implements MarkerStatistics {
 	private _resourceStats(resource: URI): MarkerStatistics {
 		const result: MarkerStatistics = { errors: 0, warnings: 0, infos: 0, unknowns: 0 };
 
-		// TODO this is a hack
+		// TODO this is a hack id:65
 		if (resource.scheme === Schemas.inMemory || resource.scheme === Schemas.walkThrough || resource.scheme === Schemas.walkThroughSnippet) {
 			return result;
 		}

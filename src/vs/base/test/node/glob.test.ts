@@ -236,7 +236,7 @@ suite('Glob', () => {
 		assertGlobMatch(p, 'some/folder/project.json');
 		assertNoGlobMatch(p, 'some/folder/file_project.json');
 		assertNoGlobMatch(p, 'some/folder/fileproject.json');
-		// assertNoGlobMatch(p, '/rrproject.json'); TODO@ben this still fails if T1-3 are disabled
+		// assertNoGlobMatch(p, '/rrproject.json'); TODO this still fails if T1-3 are disabled id:32 @ben
 		assertNoGlobMatch(p, 'some/rrproject.json');
 		// assertNoGlobMatch(p, 'rrproject.json');
 		// assertNoGlobMatch(p, '\\rrproject.json');

@@ -94,7 +94,7 @@ export class LinuxUpdateService extends AbstractUpdateService {
 			const currentRevision = path.basename(resolvedCurrentSnapPath);
 
 			if (process.env.SNAP_REVISION !== currentRevision) {
-				// TODO@joao: snap
+				// TODO snap id:43 @joao:
 				this.setState(State.Ready({ version: '', productVersion: '' }));
 			} else {
 				this.setState(State.Idle(UpdateType.Archive));
@@ -119,7 +119,7 @@ export class LinuxUpdateService extends AbstractUpdateService {
 
 		const snap = process.env.SNAP;
 
-		// TODO@joao what to do?
+		// TODO what to do? id:116 @joao
 		if (!snap) {
 			return;
 		}

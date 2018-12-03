@@ -172,11 +172,11 @@ export class WebviewEditor extends BaseWebviewEditor {
 			this._webviewContent = undefined;
 		}
 
-		// TODO@matt restore following line but check for test failures
-		// in integration tests due to the async nature of native promises
-		// return super.setInput(input, options).then()
+		// TODO restore following line but check for test failures id:212 @matt
+  // in integration tests due to the async nature of native promises
+  // return super.setInput(input, options).then()
 
-		// TODO@matt remove the following 2 lines when super.setInput() is back
+		// TODO remove the following 2 lines when super.setInput() is back id:236 @matt
 		this._input = input;
 		this._options = options;
 

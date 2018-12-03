@@ -62,7 +62,7 @@ export class CharacterHardWrappingLineMapperFactory implements ILineMapperFactor
 		this.classifier = new WrappingCharacterClassifier(breakBeforeChars, breakAfterChars, breakObtrusiveChars);
 	}
 
-	// TODO@Alex -> duplicated in lineCommentCommand
+	// TODO -> duplicated in lineCommentCommand id:85 @Alex
 	private static nextVisibleColumn(currentVisibleColumn: number, tabSize: number, isTab: boolean, columnSize: number): number {
 		currentVisibleColumn = +currentVisibleColumn; //@perf
 		tabSize = +tabSize; //@perf

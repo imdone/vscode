@@ -378,7 +378,7 @@ export class LineCommentCommand implements editorCommon.ICommand {
 		return res;
 	}
 
-	// TODO@Alex -> duplicated in characterHardWrappingLineMapper
+	// TODO -> duplicated in characterHardWrappingLineMapper id:110 @Alex
 	private static nextVisibleColumn(currentVisibleColumn: number, tabSize: number, isTab: boolean, columnSize: number): number {
 		if (isTab) {
 			return currentVisibleColumn + (tabSize - (currentVisibleColumn % tabSize));

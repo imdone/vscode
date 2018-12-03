@@ -98,7 +98,7 @@ export interface IViewDescriptor {
 
 	readonly container: ViewContainer;
 
-	// TODO@Sandeep do we really need this?!
+	// TODO do we really need this?! id:176 @Sandeep
 	readonly ctor: any;
 
 	readonly when?: ContextKeyExpr;

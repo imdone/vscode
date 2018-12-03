@@ -679,7 +679,7 @@ configurationRegistry.registerConfiguration({
 			'default': true,
 			'tags': ['usesOnlineServices']
 		},
-		//TODO@Ben remove ('enableLegacyStorage') after a while
+		//TODO remove ('enableLegacyStorage') after a while id:198 @Ben
 		'workbench.enableLegacyStorage': {
 			'type': 'boolean',
 			'description': nls.localize('workbench.enableLegacyStorage', "Switches back to the previous storage implementation. Only change this setting if advised to do so."),
@@ -831,7 +831,7 @@ configurationRegistry.registerConfiguration({
 			'description': nls.localize('window.nativeFullScreen', "Controls if native full-screen should be used on macOS. Disable this option to prevent macOS from creating a new space when going full-screen."),
 			'included': isMacintosh
 		},
-		'window.smoothScrollingWorkaround': { // TODO@Ben remove once https://github.com/Microsoft/vscode/issues/61824 settles
+		'window.smoothScrollingWorkaround': { // TODO remove once https://github.com/Microsoft/vscode/issues/61824 settles id:124 @Ben
 			'type': 'boolean',
 			'default': false,
 			'scope': ConfigurationScope.APPLICATION,

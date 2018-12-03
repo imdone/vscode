@@ -349,7 +349,7 @@ export class FoldingController implements IEditorContribution {
 
 				// const gutterOffsetX = data.offsetX - data.glyphMarginWidth - data.lineNumbersWidth - data.glyphMarginLeft;
 
-				// TODO@joao TODO@alex TODO@martin this is such that we don't collide with dirty diff
+				// TODO TODO@alex TODO@martin this is such that we don't collide with dirty diff id:139 @joao
 				if (gutterOffsetX < 5) { // the whitespace between the border and the real folding icon border is 5px
 					return;
 				}

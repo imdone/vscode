@@ -32,7 +32,7 @@ parts:
       - libappindicator1
       - xdg-user-dirs
       - libsecret-1-0
-      # TODO@joao @Tyriar check these deps
+      # TODO check these deps id:13 @joao @Tyriar
       # - libatomic1
       # - libgtk2.0-bin
     prime:

@@ -43,8 +43,8 @@ class MsPointerHandler extends MouseHandler implements IDisposable {
 		this.viewHelper.linesContentDomNode.style.msTouchAction = 'none';
 		this.viewHelper.linesContentDomNode.style.msContentZooming = 'none';
 
-		// TODO@Alex -> this expects that the view is added in 100 ms, might not be the case
-		// This handler should be added when the dom node is in the dom tree
+		// TODO -> this expects that the view is added in 100 ms, might not be the case id:104 @Alex
+  // This handler should be added when the dom node is in the dom tree
 		this._installGestureHandlerTimeout = window.setTimeout(() => {
 			this._installGestureHandlerTimeout = -1;
 			if ((<any>window).MSGesture) {
@@ -90,7 +90,7 @@ class MsPointerHandler extends MouseHandler implements IDisposable {
 			e.preventDefault();
 			this.viewHelper.focusTextArea();
 		} else {
-			// TODO@Alex -> cancel this is focus is lost
+			// TODO -> cancel this is focus is lost id:82 @Alex
 			setTimeout(() => {
 				this.viewHelper.focusTextArea();
 			});
@@ -120,12 +120,12 @@ class StandardPointerHandler extends MouseHandler implements IDisposable {
 
 		this.viewHelper.linesContentDomNode.style.touchAction = 'none';
 
-		// TODO@Alex -> this expects that the view is added in 100 ms, might not be the case
-		// This handler should be added when the dom node is in the dom tree
+		// TODO -> this expects that the view is added in 100 ms, might not be the case id:58 @Alex
+  // This handler should be added when the dom node is in the dom tree
 		this._installGestureHandlerTimeout = window.setTimeout(() => {
 			this._installGestureHandlerTimeout = -1;
 
-			// TODO@Alex: replace the usage of MSGesture here with something that works across all browsers
+			// TODO replace the usage of MSGesture here with something that works across all browsers id:34 @Alex:
 			if ((<any>window).MSGesture) {
 				let touchGesture = new MSGesture();
 				let penGesture = new MSGesture();
@@ -168,7 +168,7 @@ class StandardPointerHandler extends MouseHandler implements IDisposable {
 			e.preventDefault();
 			this.viewHelper.focusTextArea();
 		} else {
-			// TODO@Alex -> cancel this is focus is lost
+			// TODO -> cancel this is focus is lost id:107 @Alex
 			setTimeout(() => {
 				this.viewHelper.focusTextArea();
 			});

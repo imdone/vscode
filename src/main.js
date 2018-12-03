@@ -28,7 +28,7 @@ bootstrap.enableASARSupport();
 const args = parseCLIArgs();
 const userDataPath = getUserDataPath(args);
 
-// TODO@Ben global storage migration needs to happen very early before app.on("ready")
+// TODO global storage migration needs to happen very early before app.on("ready") id:96 @Ben
 // We copy the DB instead of moving it to ensure we are not running into locking issues
 if (process.env['VSCODE_TEST_STORAGE_MIGRATION']) {
 	try {
@@ -149,7 +149,7 @@ function onReady() {
  */
 function configureCommandlineSwitches(cliArgs, nodeCachedDataDir) {
 
-	// TODO@Ben Electron 2.0.x: prevent localStorage migration from SQLite to LevelDB due to issues
+	// TODO Electron 2.0.x: prevent localStorage migration from SQLite to LevelDB due to issues id:7 @Ben
 	app.commandLine.appendSwitch('disable-mojo-local-storage');
 
 	// Force pre-Chrome-60 color profile handling (for https://github.com/Microsoft/vscode/issues/51791)
